@@ -9,7 +9,7 @@ function getAllEmployees(){
 			var ajaxObject = JSON.parse(xhttp.responseText);
 	        
 			// Generate the html for table and concatenate values from ajax object
-			var txt = "<table class='table table-striped' border='1' style='padding: 50px'> " +
+			var txt = "<table class='table table-striped table-hover' border='1' style='padding: 50px'> " +
 	        		"<thead>" +
 		        		"<tr>" +
 		        			"<th>Employee ID No.</th>" +
@@ -21,7 +21,7 @@ function getAllEmployees(){
 			        "</thead>" +
 			        "<tbody>"    		
 	            for (x in ajaxObject) {
-	                txt += ("<tr style='hover onclick='return getPending(" + ajaxObject[x].id +")' ><td>" + ajaxObject[x].id + "</td>" + 
+	                txt += ("<tr class='tablerow' onclick='return getPending(" + ajaxObject[x].id +")' ><td>" + ajaxObject[x].id + "</td>" + 
 	                "<td>" + ajaxObject[x].lastName + "</td>" +
 	                "<td>" + ajaxObject[x].firstName + "</td>" + 
 	                "<td>" + ajaxObject[x].email + "</td>" +
@@ -54,7 +54,7 @@ function getPending(employeeid){
 			var ajaxObject = JSON.parse(xhttp.responseText);
 	        
 			// Generate the html for table and concatenate values from ajax object
-			var txt = "<table class='table table-striped' border='1' style='padding: 50px'> " +
+			var txt = "<table class='table table-striped table-hover' border='1' style='padding: 50px'> " +
 	        		"<thead>" +
 		        		"<tr>" +
 		        			"<th>Ticket ID No.</th>" +
@@ -66,7 +66,7 @@ function getPending(employeeid){
 			        "</thead>" +
 			        "<tbody>"    		
 	            for (x in ajaxObject) {	      
-	                txt += ("<tr><td>" + ajaxObject[x].ticketId + "</td>" + 
+	                txt += ("<tr class='tablerow' onclick='return getTicketInfo(" + ajaxObject[x].ticketId + ")'><td>" + ajaxObject[x].ticketId + "</td>" + 
 	                "<td>" + ajaxObject[x].status + "</td>" +
 	                "<td>" + ajaxObject[x].resolution + "</td>" + 
 	                "<td>" + ajaxObject[x].total + "</td>" +
@@ -81,12 +81,13 @@ function getPending(employeeid){
 	            txt += "</tbody></table>" 
 	            
 	            // Populate the empty div 
+	            document.getElementById("tablelabel").innerHTML = "Pending Tickets for Employee ID No. " + employeeid;
 	            document.getElementById("ticketlist").innerHTML = txt;
 		 }
 		};
 		//Opening connection for endpoint
 		xhttp.open("POST", "http://localhost:8080/ERSProject/managerViewPending.ajax", true);
-		document.getElementById("tablelabel").innerHTML = "All Pending Tickets";
+		
 
 		//Sending request to endpoint
 		xhttp.send(String(employeeid));
@@ -103,7 +104,7 @@ function getAllPending(){
 			var ajaxObject = JSON.parse(xhttp.responseText);
 	        
 			// Generate the html for table and concatenate values from ajax object
-			var txt = "<table class='table table-striped' border='1' style='padding: 50px'> " +
+			var txt = "<table class='table table-striped table-hover' border='1' style='padding: 50px'> " +
 	        		"<thead>" +
 		        		"<tr>" +
 		        			"<th>Ticket ID No.</th>" +
@@ -115,7 +116,7 @@ function getAllPending(){
 			        "</thead>" +
 			        "<tbody>"    		
 	            for (x in ajaxObject) {	      
-	                txt += ("<tr><td>" + ajaxObject[x].ticketId + "</td>" + 
+	                txt += ("<tr class='tablerow' onclick='return getTicketInfo(" + ajaxObject[x].ticketId + ")'><td>" + ajaxObject[x].ticketId + "</td>" + 
 	                "<td>" + ajaxObject[x].status + "</td>" +
 	                "<td>" + ajaxObject[x].resolution + "</td>" + 
 	                "<td>" + ajaxObject[x].total + "</td>" +

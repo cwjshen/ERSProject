@@ -282,7 +282,7 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 					+ "LEFT JOIN EMPLOYEEROLE "
 						+ "ON EMPLOYEE.EMPLOYEEID = EMPLOYEEROLE.EMPLOYEEID "
 					+ "LEFT JOIN ROLETYPE "
-						+ "ON EMPLOYEEROLE.ROLETYPEID = ROLETYPE.ROLETYPEID ";
+						+ "ON EMPLOYEEROLE.ROLETYPEID = ROLETYPE.ROLETYPEID ORDER BY EMPLOYEE.EMPLOYEEID ASC";
 			PreparedStatement statement = connection.prepareStatement(command);
 			ResultSet result = statement.executeQuery();
 			

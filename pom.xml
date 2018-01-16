@@ -46,11 +46,12 @@
   <version>2.8.2</version>
 </dependency>		
   </dependencies>
-  <build>
-    <finalName>ERSProject</finalName>
-  </build>
+  
 <properties>
    <maven.compiler.source>1.8</maven.compiler.source>
    <maven.compiler.target>1.8</maven.compiler.target>
-</properties>
+</properties>  
+  <build>
+    <finalName>ERSProject</finalName>
+  </build>
 </project>
