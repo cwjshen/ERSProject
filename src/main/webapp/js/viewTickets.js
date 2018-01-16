@@ -30,7 +30,7 @@ function getTicketInfo(ticketid) {
 			document.getElementById("ticketlist").innerHTML = txt;
 		}
 	}
-	xhttp.open("POST", "http://localhost:8080/ERSProject/viewTicketInfo.ajax", true);
+	xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/viewTicketInfo.ajax", true);
 	xhttp.send(String(ticketid));
 }
 
@@ -76,17 +76,17 @@ function getTickets(option){
 		//Opening connection for endpoint
 		if (option == "pending") {
 			console.log("Pending");
-			xhttp.open("POST", "http://localhost:8080/ERSProject/viewPending.ajax", true);
+			xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/viewPending.ajax", true);
 			document.getElementById("tablelabel").innerHTML = "All Pending Tickets";
 		}
 		else if (option == "resolved") {
 			console.log("Resolved");
-			xhttp.open("POST", "http://localhost:8080/ERSProject/viewResolved.ajax", true);
+			xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/viewResolved.ajax", true);
 			document.getElementById("tablelabel").innerHTML = "All Resolved Tickets";
 		}		
 		else {
 			console.log("All");
-			xhttp.open("POST", "http://localhost:8080/ERSProject/viewTickets.ajax", true);
+			xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/viewTickets.ajax", true);
 			document.getElementById("tablelabel").innerHTML = "All Reimbursement Tickets";
 		}
 		

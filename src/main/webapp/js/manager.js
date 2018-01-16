@@ -36,7 +36,7 @@ function getAllEmployees(){
 		 }
 		};
 		//Opening connection for endpoint
-		xhttp.open("POST", "http://localhost:8080/ERSProject/viewAllEmployees.ajax", true);
+		xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/viewAllEmployees.ajax", true);
 		document.getElementById("tablelabel").innerHTML = "All Employees";
 
 		
@@ -86,7 +86,7 @@ function getPending(employeeid){
 		 }
 		};
 		//Opening connection for endpoint
-		xhttp.open("POST", "http://localhost:8080/ERSProject/managerViewPending.ajax", true);
+		xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/managerViewPending.ajax", true);
 		
 
 		//Sending request to endpoint
@@ -135,7 +135,7 @@ function getAllPending(){
 		 }
 		};
 		//Opening connection for endpoint
-		xhttp.open("POST", "http://localhost:8080/ERSProject/viewAllPending.ajax", true);
+		xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/viewAllPending.ajax", true);
 		document.getElementById("tablelabel").innerHTML = "All Pending Tickets";
 	  
 		//Sending request to endpoint
@@ -179,7 +179,7 @@ function getAllResolved(){
 	            document.getElementById("ticketlist").innerHTML = txt;
 		 }
 		};
-		xhttp.open("POST", "http://localhost:8080/ERSProject/viewAllResolved.ajax", true);
+		xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/viewAllResolved.ajax", true);
 		document.getElementById("tablelabel").innerHTML = "All Resolved Tickets";
 
 		xhttp.send();
@@ -198,7 +198,7 @@ function approve(ticketid) {
 			getAllPending(); 
 		 }
 		};
-		xhttp.open("POST", "http://localhost:8080/ERSProject/approve.ajax", true);
+		xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/approve.ajax", true);
 		xhttp.send(String(ticketid));
 }
 
@@ -216,7 +216,7 @@ function deny(ticketid) {
 		 }
 		};
 		//Opening connection for endpoint
-		xhttp.open("POST", "http://localhost:8080/ERSProject/deny.ajax", true);
+		xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/deny.ajax", true);
 
 		//Sending request to endpoint
 		xhttp.send(String(ticketid));
