@@ -10,8 +10,8 @@ public class LoginController {
 	
 	public static String login(HttpServletRequest request) {
 
-		if(logger.isDebugEnabled()){
-		    logger.debug("Login Successful, session logged");
+		if(LogUtil.logger.isDebugEnabled()){
+		    LogUtil.logger.debug("Login Successful, session logged");
 		}
 
 		
