@@ -9,6 +9,11 @@ import com.revature.service.EmployeeService;
 public class LoginController {
 	
 	public static String login(HttpServletRequest request) {
+
+		if(logger.isDebugEnabled()){
+		    logger.debug("Login Successful, session logged");
+		}
+
 		
 		//If it's a GET we just return the view.
 		if(request.getMethod().equals("GET")) {
