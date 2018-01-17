@@ -81,12 +81,12 @@ function getTickets(option){
 		}
 		else if (option == "resolved") {
 			console.log("Resolved");
-			xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/viewResolved.ajax", true);
+			xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/viewResolved.ajax", true);
 			document.getElementById("tablelabel").innerHTML = "All Resolved Tickets";
 		}		
 		else {
 			console.log("All");
-			xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/viewTickets.ajax", true);
+			xhttp.open("POST", "http://ec2-52-207-147-137.compute-1.amazonaws.com:8080/ERSProject/viewTickets.ajax", true);
 			document.getElementById("tablelabel").innerHTML = "All Reimbursement Tickets";
 		}
 		
