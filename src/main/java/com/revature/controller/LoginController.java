@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.revature.model.Employee;
 import com.revature.service.EmployeeService;
+import com.revature.util.LogUtil;
 
 public class LoginController {
 	
